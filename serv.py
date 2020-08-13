@@ -8,6 +8,10 @@ app.config['UPLOAD_FOLDER'] = '/Users/dest/pollen_workshop'
 def root():
     return open('index.html').read()
 
+@app.route('/editor')
+def editor():
+    return open('editor.html').read()
+
 @app.route('/upload', methods=['PUT'])
 def upload_file():
     fn = request.args.get('filename')
